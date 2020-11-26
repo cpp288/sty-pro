@@ -26,7 +26,7 @@ public class TopK<E> {
 
     public TopK(int k) {
         this.k = k;
-        this.p = new PriorityQueue<E>(k);
+        this.p = new PriorityQueue<>(k);
     }
 
     public void addAll(Collection<? extends E> c) {
@@ -60,7 +60,7 @@ public class TopK<E> {
     }
 
     public static void main(String[] args) {
-        TopK<Integer> top5 = new TopK<Integer>(5);
+        TopK<Integer> top5 = new TopK<>(5);
         top5.addAll(Arrays.asList(100, 1, 2, 5, 6, 2, 4, 637, 42, 231, 324, 32121, 565, 32, 22, 123, 55677, 54, 3, 22));
         System.out.println(Arrays.toString(top5.toArray(new Integer[0])));
         System.out.println(top5.getKth());

@@ -28,8 +28,8 @@ public class Median<E> {
 
     public Median() {
 
-        this.minP = new PriorityQueue<E>();
-        this.maxP = new PriorityQueue<E>(11, Collections.reverseOrder());
+        this.minP = new PriorityQueue<>();
+        this.maxP = new PriorityQueue<>(11, Collections.reverseOrder());
     }
 
     private int compare(E e, E m) {
@@ -70,7 +70,7 @@ public class Median<E> {
     }
 
     public static void main(String[] args) {
-        Median<Integer> median = new Median<Integer>();
+        Median<Integer> median = new Median<>();
         List<Integer> list = Arrays.asList(34, 90, 67, 45, 1, 4, 5, 6, 7, 9, 10);
         median.addAll(list);
         System.out.println(median.getM());
