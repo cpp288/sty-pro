@@ -1,4 +1,4 @@
-package com.cpp288.demo.programLogic.file;
+package com.cpp288.demo.programLogic.io;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
  * @author chenjian
  * @date 2020/11/26 下午4:28
  */
-public class FileIODemo {
+public class FileStreamDemo {
 
     /**
      * 写文件

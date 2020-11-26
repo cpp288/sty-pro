@@ -1,9 +1,8 @@
-package com.cpp288.demo.programLogic.file;
+package com.cpp288.demo.programLogic.io;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 /**
  * Byte Array IO demo
@@ -11,7 +10,7 @@ import java.io.UnsupportedEncodingException;
  * @author chenjian
  * @date 2020/11/26 下午4:48
  */
-public class ByteArrayIODemo {
+public class ByteArrayStreamDemo {
 
     private static void read() {
 

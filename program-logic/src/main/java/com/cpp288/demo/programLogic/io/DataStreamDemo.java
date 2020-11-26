@@ -1,7 +1,6 @@
-package com.cpp288.demo.programLogic.file;
+package com.cpp288.demo.programLogic.io;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
  * @author chenjian
  * @date 2020/11/26 下午6:57
  */
-public class DataIODemo {
+public class DataStreamDemo {
 
     private static class Student {
 

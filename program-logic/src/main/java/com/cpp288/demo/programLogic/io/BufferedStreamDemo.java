@@ -1,4 +1,4 @@
-package com.cpp288.demo.programLogic.file;
+package com.cpp288.demo.programLogic.io;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -11,7 +11,7 @@ import java.io.InputStream;
  * @author chenjian
  * @date 2020/11/26 下午7:09
  */
-public class BufferedIODemo {
+public class BufferedStreamDemo {
 
     private static void read() {
 
