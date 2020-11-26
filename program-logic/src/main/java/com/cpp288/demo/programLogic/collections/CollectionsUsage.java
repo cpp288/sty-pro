@@ -26,7 +26,64 @@ public class CollectionsUsage {
         System.out.println(Collections.binarySearch(list, 7, Collections.reverseOrder()));
     }
 
+    /**
+     * 查找最大最小值
+     * 通过迭代器进行比较
+     */
+    public static void maxOrMin() {
+        List<Integer> list = new ArrayList<>(Arrays.asList(11, 33, 15, 12, 8, 7, 1));
+        System.out.println(Collections.max(list));
+        System.out.println(Collections.min(list, Collections.reverseOrder()));
+    }
+
+    /**
+     * 排序、交换位置、翻转
+     */
+    public static void sortSwapReverse() {
+        List<Integer> list = new ArrayList<>(Arrays.asList(11, 33, 15, 12, 8, 7, 1));
+        // 排序：内部是用过Arrays.sort实现的
+        // 先将List元素复制到一个数组中，然后使用Arrays.sort，排序后，再复制回List
+        Collections.sort(list);
+        System.out.println(list);
+        // 交换位置
+        Collections.swap(list, 1, 3);
+        System.out.println(list);
+        // 翻转：实现思路就是将第一个和最后一个交换，第二个和倒数第二个交换，以此类推，直到中间两个元素交换完毕
+        // 如果list实现了RandomAccess接口或列表比较小，根据索引位置，使用上面的swap方法进行交换，否则，由于直接根据索引位置定位元素效率比较低，使用一前一后两个listIterator定位待交换的元素
+        Collections.reverse(list);
+        System.out.println(list);
+    }
+
+    /**
+     * 随机化重排
+     * 从后往前遍历列表，逐个给每个位置重新赋值，值从前面的未重新赋值的元素中随机挑选。
+     * 如果列表实现了RandomAccess接口，或者列表比较小，直接使用前面swap方法进行交换，否则，先将列表内容复制到一个数组中，洗牌，再复制回列表
+     */
+    public static void shuffle() {
+        List<Integer> list = new ArrayList<>(Arrays.asList(11, 33, 15, 12, 8, 7, 1));
+        Collections.shuffle(list);
+        System.out.println(list);
+    }
+
+    /**
+     * 循环移位
+     */
+    public static void rotate() {
+        // distance正数右移，负数左移
+        List<Integer> list1 = new ArrayList<>(Arrays.asList(8, 5, 3, 6, 2));
+        Collections.rotate(list1, 2);
+        System.out.println(list1);
+
+        List<Integer> list2 = new ArrayList<>(Arrays.asList(8, 5, 3, 6, 2));
+        Collections.rotate(list2, -2);
+        System.out.println(list2);
+    }
+
     public static void main(String[] args) {
-        binarySearch();
+//        binarySearch();
+//        maxOrMin();
+//        sortSwapReverse();
+//        shuffle();
+        rotate();
     }
 }
