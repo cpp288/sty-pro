@@ -1,4 +1,4 @@
-package com.cpp288.demo.algorithm;
+package com.cpp288.demo.algorithm.linkedlist;
 
 /**
  * 使用单向链表数据结构判断字符串是否是回文
