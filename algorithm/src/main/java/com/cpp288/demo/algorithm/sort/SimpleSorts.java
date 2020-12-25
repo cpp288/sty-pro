@@ -20,10 +20,10 @@ public class SimpleSorts {
         if (n <= 1) {
             return;
         }
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; i++) {
             // 提前退出标识位
             boolean flag = false;
-            for (int j = 0; j < n - i - 1; ++j) {
+            for (int j = 0; j < n - i - 1; j++) {
                 // 如果当前元素大于后一个元素，则进行位置交换
                 if (a[j] > a[j + 1]) {
                     int tmp = a[j];
@@ -39,9 +39,34 @@ public class SimpleSorts {
         }
     }
 
+    /**
+     * 插入排序
+     *
+     * @param a 需要排序的数组
+     */
+    public static void insertionSort(int[] a) {
+        final int n = a.length;
+        if (n <= 1) {
+            return;
+        }
+        for (int i = 1; i < n; i++) {
+            int value = a[i];
+            int j = i - 1;
+            for (; j >= 0; j--) {
+                if (a[j] > value) {
+                    a[j + 1] = a[j];
+                } else {
+                    break;
+                }
+            }
+            a[j + 1] = value;
+        }
+    }
+
     public static void main(String[] args) {
         int[] array = new int[]{3, 4, 2, 1, 5, 6, 7, 8};
-        bubbleSort(array);
+//        bubbleSort(array);
+        insertionSort(array);
         System.out.println(Arrays.toString(array));
     }
 }
