@@ -39,11 +39,13 @@ public class MergeSort {
         mergeSortInternally(a, q + 1, r);
 
         // 将A[p...q]和A[q+1...r]合并为A[p...r]
-        merge(a, p, q, r);
+//        merge(a, p, q, r);
+        mergeBySentry(a, p, q, r);
     }
 
     /**
      * 将a[p...q]和a[q+1...r]合并为a[p...r]
+     *
      * @param a 需要排序的数组
      * @param p 起始下标
      * @param q 中间下标
@@ -80,6 +82,43 @@ public class MergeSort {
         // 将tmp中的数组拷贝回a[p...r]
         for (i = 0; i <= r - p; ++i) {
             a[p + i] = tmp[i];
+        }
+    }
+
+    /**
+     * 合并(哨兵)
+     *
+     * @param a 需要排序的数组
+     * @param p 起始下标
+     * @param q 中间下标
+     * @param r 结束下标
+     */
+    private static void mergeBySentry(int[] a, int p, int q, int r) {
+        int[] leftArr = new int[q - p + 2];
+        int[] rightArr = new int[r - q + 1];
+
+        for (int i = 0; i <= q - p; i++) {
+            leftArr[i] = a[p + i];
+        }
+        // 第一个数组添加哨兵（最大值）
+        leftArr[q - p + 1] = Integer.MAX_VALUE;
+
+        for (int i = 0; i < r - q; i++) {
+            rightArr[i] = a[q + 1 + i];
+        }
+        // 第二个数组添加哨兵（最大值）
+        rightArr[r - q] = Integer.MAX_VALUE;
+
+        int i = 0;
+        int j = 0;
+        int k = p;
+        while (k <= r) {
+            // 当左边数组到达哨兵值时，i不再增加，直到右边数组读取完剩余值，同理右边数组也一样
+            if (leftArr[i] <= rightArr[j]) {
+                a[k++] = leftArr[i++];
+            } else {
+                a[k++] = rightArr[j++];
+            }
         }
     }
 }
