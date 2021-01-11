@@ -11,6 +11,7 @@
     <modules>
         <module>program-logic</module>
         <module>algorithm</module>
+        <module>netty</module>
     </modules>
 
     <properties>
