@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: oauth2-server
+  datasource:
+    url: jdbc:mysql://192.168.173.25:3306/oauth?useUnicode=true&characterEncoding=UTF8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: dbadmin
+    password: db_master
+    driver-class-name: com.mysql.cj.jdbc.Driver

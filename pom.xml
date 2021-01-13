@@ -12,6 +12,7 @@
         <module>program-logic</module>
         <module>algorithm</module>
         <module>netty</module>
+        <module>springsecurity-oauth2</module>
     </modules>
 
     <properties>
