@@ -13,6 +13,7 @@
         <module>algorithm</module>
         <module>netty</module>
         <module>springsecurity-oauth2</module>
+        <module>mapstruct-demo</module>
     </modules>
 
     <properties>
